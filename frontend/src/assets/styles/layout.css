@@ -1,0 +1,30 @@
+.app {
+  display: grid;
+  grid-template-columns: 200px auto;
+  grid-template-rows: 75px auto 50px;
+  grid-template-areas: 
+    "header header"
+    "navigation content"
+    "navigation footer";
+}
+
+.header {
+  grid-area: header;
+  background-color: #33FFFF;
+}
+
+.navigation {
+  grid-area: navigation;
+  background-color:#999999;
+}
+
+.content {
+  grid-area: content;
+  background-color: rgba(204, 204, 204, 0.36);
+  height: calc(100vh - 75px - 50px);
+}
+
+.footer {
+  grid-area: footer;
+  background-color: #CCCCCC;
+}

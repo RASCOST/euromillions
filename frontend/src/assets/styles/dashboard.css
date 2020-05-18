@@ -1,0 +1,61 @@
+.dash-container {
+  display: flex;
+  justify-content: space-around;
+}
+
+.last-container {
+  width: 450px;
+  border: 1px solid black;
+  border-radius: 5px;
+  margin: 25px;
+  background-color: #ffffdd;
+}
+
+.numbers-container {
+  display: flex;
+  justify-content: space-around;
+  font-size: medium;
+  font-weight: bold;
+  text-align: center;
+  border-top: 1px solid black;
+  border-bottom: 1px solid black;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  background-color: rgba(255, 255,0, 0.3);
+}
+
+.number-circle {
+  width: 50px;
+  height: 50px;
+  text-align: center;
+  background-image: url("../imgs/circle2.png");
+  background-repeat:no-repeat;
+  padding: 10px;
+  color: blue;
+}
+
+.number-star {
+  width: 55px;
+  height: 50px;
+  background-image: url("../imgs/star2.png");
+  background-repeat:no-repeat;
+  padding: 10px;
+  color: blue;
+}
+
+.year-numbers {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  border: 1px solid black;
+  border-radius: 5px;
+  margin: 20px;
+  background-color: #ffffdd;
+}
+
+.chart-container {
+  display: flex;
+  justify-content: space-around;
+  padding: 20px;
+  border-top: 1px solid black;
+}

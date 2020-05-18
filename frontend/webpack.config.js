@@ -1,10 +1,10 @@
-const path = require( 'path' )
-const MiniCssExtractPlugin = require( 'mini-css-extract-plugin' )
+const path = require('path')
+const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 
 
 module.exports = {
     mode: 'development',
-    entry: ['./src/index.jsx'],
+    entry: './src/index.js',
     output: {
         path: path.resolve(__dirname, '/dist'),
         filename: 'app.js',
@@ -12,7 +12,8 @@ module.exports = {
     devServer: {
         historyApiFallback: true,
         contentBase: './dist',
-        port: 9000
+        port: 9000,
+        open: true
     },
     devtool: 'source-map',
     plugins: [new MiniCssExtractPlugin({filename: 'style.css'})],
@@ -41,18 +42,21 @@ module.exports = {
                 use: [
                     {
                       loader: 'file-loader',
-                      options: {
+                     /* options: {
                         name: '[name].[ext]',
-                        /*outputPath: '/public'*/
-                      }
+                        outputPath: '/dist'
+                      }*/
                     }
                   ]
             },
             {
-                test:/\.(|svg|png|jpg|gif)?$/,
+                test:/\.(svg|png|jpe?g|gif)?$/,
                 use: [
                     {
                         loader: 'file-loader',
+                        /*options: {
+                            outputPath: '/dist'
+                        }*/
                     }
                 ]
             }
