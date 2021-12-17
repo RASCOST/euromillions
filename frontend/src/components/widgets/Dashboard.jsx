@@ -74,17 +74,17 @@ export default props => {
       .catch(error => console.log(error))
 
     axios.get(`http://localhost:3000/yearResults/2020`)
-    .then(response => {
-      const [balls, stars] = response.data
-      const dataChartBall = [['Balls','Times']]
-      const dataChartStar = [['Stars','Times']]
+      .then(response => {
+        const [balls, stars] = response.data
+        const dataChartBall = [['Balls', 'Times']]
+        const dataChartStar = [['Stars', 'Times']]
 
-      setBallsColumn(balls, dataChartBall)
-      setStarsColumn(stars, dataChartStar)
-      setMostBalls(dataChartBall)
-      setMostStars(dataChartStar)
-    })
-    .catch(error => console.log(error))
+        setBallsColumn(balls, dataChartBall)
+        setStarsColumn(stars, dataChartStar)
+        setMostBalls(dataChartBall)
+        setMostStars(dataChartStar)
+      })
+      .catch(error => console.log(error))
   }, [])
 
   return (

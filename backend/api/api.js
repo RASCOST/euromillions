@@ -1,14 +1,3 @@
-/*const getLastResult = page => {
-  let balls = ''
-  let stars = ''
-  const regex = /[0-5]?[0-9]/g
-
-  balls = page.substring(page.indexOf('<li class="new ball">'), page.indexOf('<li class="new lucky-star">'))
-  stars = page.substring(page.indexOf('<li class="new lucky-star">'), page.indexOf('</li></ul>'))
-
-  return balls.match(regex).concat(stars.match(regex))
-}*/
-
 const getLastResult = page => {
   const regexLastBalls = /<li class="new ball">\d\d?<\/li>/g //serch for the last balls, and we get the two days
   const regexLastStars = /<li class="new lucky-star">\d\d?<\/li>/g //search for last stars, and we get the two days
@@ -50,4 +39,16 @@ const getMostNumbers = page => {
 
   return [mostBalls, mostStars]
 }
-module.exports = {getLastResult, getMostNumbers}
+
+const getYearsSelect = page => {
+  let years = ''
+
+  const regexYearsString =/>\d\d\d\d</g
+  const regexYearsNumber = /\d\d\d\d/g
+
+  years = page.match(regexYearsString).toString() //find the years and return '<2020>, <2019>, <2018>, ... <2004>'
+
+  return years.match(regexYearsNumber)
+}
+
+module.exports = {getLastResult, getMostNumbers, getYearsSelect}
