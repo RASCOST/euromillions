@@ -13,7 +13,6 @@ server.use(bodyParser.json())
 
 server.get('/lastResult', (req, res) => {
     try{
-        //axios.get(`https://www.euro-millions.com/pt/resultados/${req.params.lastDay}`)
         axios.get(`https://www.euro-millions.com/pt/resultados`)
             .then(response => {
                 const lastResult = api.getLastResult(response.data)
